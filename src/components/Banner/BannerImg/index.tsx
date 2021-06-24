@@ -10,13 +10,18 @@ export function BannerImg({ url, name }: { url: string; name: string }) {
       backgroundSize="cover"
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
-      justify={["center", "center", "flex-start", "flex-start"]}
-      align={["center", "center", "flex-end", "flex-end"]}
+      justify={{
+        sm: "center",
+        md: "center",
+        lg: "flex-start",
+        xl: "flex-start",
+      }}
+      align={{ sm: "center", md: "center", lg: "flex-end", xl: "flex-end" }}
     >
       <Text
-        ml={["0", "0", "140px", "140px"]}
-        mb={["0", "0", "59px", "59px"]}
-        fontSize={["28", "28", "38", "48"]}
+        ml={{ sm: "0", md: "0", lg: "140px", xl: "140px" }}
+        mb={{ sm: "0", md: "0", lg: "59px", xl: "59px" }}
+        fontSize={{ sm: "28", md: "28", lg: "38", xl: "48" }}
         fontWeight="semibold"
         color="white.300"
       >

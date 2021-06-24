@@ -12,10 +12,12 @@ import React from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider theme={theme}>
-      <Header />
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <>
+      <ChakraProvider theme={theme}>
+        <Header />
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </>
   );
 }
 

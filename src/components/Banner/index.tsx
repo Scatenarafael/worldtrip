@@ -8,7 +8,7 @@ export function Banner() {
       backgroundRepeat="no-repeat"
       backgroundSize="cover"
       w="100%"
-      h={["175px", "200px", "250px", "335px"]}
+      h={{ sm: "175px", md: "200px", lg: "250px", xl: "335px" }}
     >
       <Flex>
         <Flex
@@ -16,17 +16,17 @@ export function Banner() {
           justify=" center"
           align="flex-start"
           w="50%"
-          pl={["2rem", "3rem", "4rem", "5rem"]}
+          pl={{ sm: "2rem", md: "3rem", lg: "4rem", xl: "5rem" }}
         >
           <Text
-            fontSize={["16", "24", "30", "36"]}
+            fontSize={{ sm: "16", md: "24", lg: "30", xl: "36" }}
             fontWeight="medium"
             color="white.300"
           >
             5 Continentes,
           </Text>
           <Text
-            fontSize={["18", "24", "30", "36"]}
+            fontSize={{ sm: "18", md: "24", lg: "30", xl: "36" }}
             fontWeight="medium"
             color="white.300"
             mb="1rem"
@@ -34,7 +34,7 @@ export function Banner() {
             infinitas possibilidades
           </Text>
           <Text
-            fontSize={["8", "8", "14", "20"]}
+            fontSize={{ sm: "8", md: "8", lg: "14", xl: "20" }}
             fontWeight="regular"
             color="gray.300"
           >
@@ -42,11 +42,11 @@ export function Banner() {
           </Text>
         </Flex>
         <Image
-          w={["10rem", "15rem", "20rem", "30rem"]}
+          w={{ sm: "10rem", md: "15rem", lg: "20rem", xl: "30rem" }}
           src="/home/Airplane.svg"
-          mt={["3rem","3rem","4rem","5rem"]}
+          mt={{ sm: "3rem", md: "3rem", lg: "4rem", xl: "5rem" }}
           ml="auto"
-          mr={["3rem", "5rem", "8rem", "10rem"]}
+          mr={{ sm: "3rem", md: "5rem", lg: "8rem", xl: "10rem" }}
         />
       </Flex>
     </Box>

@@ -1,8 +1,4 @@
-import {
-  Flex,
-  HStack,
-  Text,
-} from "@chakra-ui/react";
+import { Flex, HStack, Text } from "@chakra-ui/react";
 import React from "react";
 import { Pop } from "../Pop";
 
@@ -16,42 +12,54 @@ export function Details({
   numberofpopularcities: number;
 }) {
   return (
-    <HStack spacing={["2", "4", "6", "8"]}>
+    <HStack spacing={{ sm: "2", md: "4", lg: "6", xl: "8" }}>
       <Flex direction="column" justify="center" align="center">
         <Text
-          fontSize={["20", "32", "40", "48"]}
+          fontSize={{ sm: "28", md: "36", lg: "44", xl: "48" }}
           fontWeight="semibold"
           color="yellow.800"
         >
           {numberofcountries}
         </Text>
-        <Text fontSize={["18", "20", "22", "24"]} fontWeight="semibold">
+        <Text
+          fontSize={{ sm: "18", md: "20", lg: "22", xl: "24" }}
+          fontWeight="semibold"
+        >
           países
         </Text>
       </Flex>
       <Flex direction="column" justify="center" align="center">
         <Text
-          fontSize={["20", "32", "40", "48"]}
+          fontSize={{ sm: "28", md: "36", lg: "44", xl: "48" }}
           fontWeight="semibold"
           color="yellow.800"
         >
           {numberoflanguages}
         </Text>
-        <Text fontSize={["18", "20", "22", "24"]} fontWeight="semibold">
+        <Text
+          fontSize={{ sm: "18", md: "20", lg: "22", xl: "24" }}
+          fontWeight="semibold"
+        >
           línguas
         </Text>
       </Flex>
       <Flex direction="column" justify="center" align="center">
         <Text
-          fontSize={["20", "32", "40", "48"]}
+          fontSize={{ sm: "28", md: "36", lg: "44", xl: "48" }}
           fontWeight="semibold"
           color="yellow.800"
         >
           {numberofpopularcities}
         </Text>
-        <Text fontSize={["18", "20", "22", "24"]} fontWeight="semibold">
-          cidades +100 <Pop />
-        </Text>
+        <Flex align="center">
+          <Text
+            fontSize={{ sm: "18", md: "20", lg: "22", xl: "24" }}
+            fontWeight="semibold"
+          >
+            cidades +100
+          </Text>
+          <Pop />
+        </Flex>
       </Flex>
     </HStack>
   );

@@ -1,15 +1,13 @@
-import { Box, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
+import { Flex, Grid, GridItem, Text } from "@chakra-ui/react";
 import React from "react";
 import { Flag } from "../Flag";
 
 export function Card({
-  key,
   imagecitycard,
   name,
   country,
   countrycode,
 }: {
-  key: React.Key;
   imagecitycard: string;
   name: string;
   country: string;
@@ -17,13 +15,12 @@ export function Card({
 }) {
   return (
     <Grid
-      key={key}
       h="279px"
       w="256px"
       minW="256px"
       templateRows="repeat(2, 1fr)"
       templateColumns="repeat(2, 1fr)"
-      gap={2}
+      gap={1}
       bg="white"
       borderTopRadius="5px"
       borderWidth="1px"
@@ -42,15 +39,28 @@ export function Card({
       <GridItem rowSpan={1} colSpan={1}>
         <Flex
           h="100%"
-          pl="15px"
           direction="column"
           justify="space-around"
           align="flex-start"
         >
-          <Text fontFamily="Barlow" fontWeight="semibold" fontSize="20">
+          <Text
+            pl="10px"
+            w="150px"
+            textAlign="left"
+            fontFamily="Barlow"
+            fontWeight="semibold"
+            fontSize="20"
+          >
             {name}
           </Text>
-          <Text fontFamily="Barlow" fontWeight="regular" fontSize="14">
+          <Text
+            pl="10px"
+            w="150px"
+            fontFamily="Barlow"
+            textAlign="left"
+            fontWeight="regular"
+            fontSize="14"
+          >
             {country}
           </Text>
         </Flex>

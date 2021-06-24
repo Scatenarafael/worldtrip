@@ -1,6 +1,6 @@
 import { Flex } from "@chakra-ui/react";
 import { GetStaticProps } from "next";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SwiperCore, { A11y, Navigation, Pagination } from "swiper";
 import { Banner } from "../components/Banner";
 import { Divider } from "../components/Divider";

@@ -1,9 +1,4 @@
-import {
-  Flex,
-  Grid,
-  GridItem,
-  Text,
-} from "@chakra-ui/react";
+import { Flex, Grid, GridItem, Text } from "@chakra-ui/react";
 import { GetServerSideProps } from "next";
 import { RichText } from "prismic-dom";
 import React from "react";
@@ -42,42 +37,42 @@ export default function Continent({ slug, continent }: ContinentProps) {
     <>
       <Grid
         h="100vh"
-        templateRows={[
-          "repeat(4, 1fr)",
-          "repeat(4, 1fr)",
-          "repeat(4, 1fr)",
-          "repeat(3, 1fr)",
-        ]}
-        templateColumns={[
-          "repeat(1, 1fr)",
-          "repeat(1, 1fr)",
-          "repeat(1, 1fr)",
-          "repeat(2, 1fr)",
-        ]}
-        gap={[2, 2, 2, 8]}
+        templateRows={{
+          sm: "repeat(4, 1fr)",
+          md: "repeat(4, 1fr)",
+          lg: "repeat(3, 1fr)",
+          xl: "repeat(3, 1fr)",
+        }}
+        templateColumns={{
+          sm: "1fr",
+          md: "1fr",
+          lg: "repeat(2, 1fr)",
+          xl: "repeat(2, 1fr)",
+        }}
+        gap={{ sm: 2, md: 2, lg: 2, xl: 8 }}
       >
         <GridItem
-          h={["150px", "300px", "400px", "500px"]}
+          h={{ sm: "150px", md: "300px", lg: "400px", xl: "500px" }}
           rowSpan={1}
           colSpan={2}
         >
           <BannerImg url={continent.urlImageBanner} name={continent.name} />
         </GridItem>
         <GridItem
-          h={["200px", "200px", "200", "330px"]}
+          h={{ sm: "200px", md: "200px", lg: "200", xl: "330px" }}
           rowSpan={1}
-          colSpan={[2, 2, 2, 1]}
+          colSpan={{ sm: 2, md: 2, lg: 2, xl: 1 }}
         >
           <Flex
             w="100%"
             h="100%"
-            pr={["10px", "10px", "10px", "100px"]}
-            ml={["10px", "10px", "10px", "50px"]}
-            mr={["10px", "10px", "0px", "0px"]}
+            pr={{ sm: "10px", md: "10px", lg: "10px", xl: "100px" }}
+            ml={{ sm: "10px", md: "10px", lg: "10px", xl: "50px" }}
+            mr={{ sm: "10px", md: "10px", lg: "0px", xl: "0px" }}
             align="center"
           >
             <Text
-              fontSize={["14", "16", "16", "24"]}
+              fontSize={{ sm: "14", md: "16", lg: "16", xl: "24" }}
               w="100%"
               textAlign="justify"
               lineHeight="shorter"
@@ -87,13 +82,18 @@ export default function Continent({ slug, continent }: ContinentProps) {
           </Flex>
         </GridItem>
         <GridItem
-          h={["80px", "80px", "80px", "330px"]}
+          h={{ sm: "80px", md: "80px", lg: "80px", xl: "330px" }}
           rowSpan={1}
-          colSpan={[2, 2, 2, 1]}
+          colSpan={{ sm: 2, md: 2, lg: 2, xl: 1 }}
         >
           <Flex
             h="100%"
-            justify={["center", "center", "center", "flex-start"]}
+            justify={{
+              sm: "center",
+              md: "center",
+              lg: "center",
+              xl: "flex-start",
+            }}
             align="center"
           >
             <Details
@@ -104,34 +104,44 @@ export default function Continent({ slug, continent }: ContinentProps) {
           </Flex>
         </GridItem>
         <GridItem
-          h={["auto", "auto", "700px", "700px"]}
+          h={{ sm: "auto", md: "auto", lg: "700px", xl: "700px" }}
           rowSpan={1}
           colSpan={2}
         >
           <Flex
-            m={["10px", "20px", "40px", "50px"]}
+            m={{ sm: "10px", md: "20px", lg: "40px", xl: "50px" }}
             pb="50px"
             direction="column"
+            align={{
+              sm: "center",
+              md: "center",
+              lg: "flex-start",
+              xl: "flex-start",
+            }}
           >
-            <Text fontSize="36" fontWeight="medium" mb="50px">
+            <Text
+              fontSize="36"
+              fontWeight="medium"
+              mt={{ sm: "20px", md: "30px", lg: "40px", xl: "50px" }}
+              mb={{ sm: "20px", md: "30px", lg: "40px", xl: "50px" }}
+            >
               Cidades +100
             </Text>
             <Grid
               w="100%"
-              templateColumns={[
-                "1fr",
-                "repeat(2, 1fr)",
-                "repeat(2, 1fr)",
-                "repeat(4, 1fr)",
-              ]}
+              templateColumns={{
+                sm: "1fr",
+                md: "repeat(2, 1fr)",
+                lg: "repeat(3, 1fr)",
+                xl: "repeat(4, 1fr)",
+              }}
               templateRows="auto"
-              gap={[1, 2, 2, 6]}
+              gap={{ sm: 1, md: 2, lg: 2, xl: 6 }}
             >
               {continent.cities.map((city) => {
                 return (
-                  <GridItem>
+                  <GridItem key={city.cityName} align="center">
                     <Card
-                      key={city.countryCode}
                       imagecitycard={city.urlImageCityCard}
                       name={city.cityName}
                       country={city.countryName}

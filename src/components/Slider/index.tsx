@@ -9,7 +9,13 @@ SwiperCore.use([Navigation, Pagination, Autoplay, A11y]);
 
 export function Slider({ continentsData }: HomeProps) {
   return (
-    <Flex w="100%" h={["250px", "450px"]} maxWidth="1240px" mx="auto" mb="2rem">
+    <Flex
+      w="100%"
+      h={{ sm: "250px", md: "300px", lg: "350px", xl: "450px" }}
+      maxWidth="1240px"
+      mx="auto"
+      mb="2rem"
+    >
       <Swiper
         slidesPerView={1}
         navigation
@@ -25,7 +31,7 @@ export function Slider({ continentsData }: HomeProps) {
       >
         {continentsData.map((data) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={data.slug}>
               <Flex
                 direction="column"
                 w="100%"
@@ -43,8 +49,10 @@ export function Slider({ continentsData }: HomeProps) {
               >
                 <Link href={`/continent/${data.slug}`}>
                   <a key={data.slug}>
-                    <Text fontSize={["26", "32", "40", "48"]}>{data.name}</Text>
-                    <Text fontSize={["7", "12", "18", "24"]}>
+                    <Text fontSize={{ sm: "26", md: "32", lg: "40", xl: "48" }}>
+                      {data.name}
+                    </Text>
+                    <Text fontSize={{ sm: "7", md: "12", lg: "18", xl: "24" }}>
                       {data.subdescription}
                     </Text>
                   </a>

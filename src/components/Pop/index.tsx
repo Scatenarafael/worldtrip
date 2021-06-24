@@ -16,26 +16,27 @@ export function Pop() {
     <>
       <Popover>
         <PopoverTrigger>
-          <InfoOutlineIcon
-            w={["14px", "14px", "20px", "20px"]}
-            cursor="pointer"
-          />
+          <InfoOutlineIcon cursor="pointer" />
         </PopoverTrigger>
-        <PopoverContent borderRadius="20px">
+        <PopoverContent
+          borderRadius="20px"
+          w={{ sm: "150px", md: "200px", lg: "300px", xl: "300px" }}
+        >
           <PopoverArrow />
           <PopoverCloseButton />
           <PopoverBody
+            bgPos="left"
             borderRadius="20px"
             bg="yellow.400"
-            p={["20px", "20px", "20px", "30px"]}
+            p={{ sm: "20px", md: "20px", lg: "20px", xl: "30px" }}
           >
             <Text
-              fontSize={["10px", "10px", "14px", "14px"]}
+              fontSize={{ sm: "10px", md: "10px", lg: "14px", xl: "14px" }}
               fontWeight="medium"
               textAlign="justify"
             >
-              Número de cidades, pertencentes ao continente, que estão entre as 100 mais
-              populares do mundo
+              Número de cidades, pertencentes ao continente, que estão entre as
+              100 mais populares do mundo
             </Text>
           </PopoverBody>
         </PopoverContent>
